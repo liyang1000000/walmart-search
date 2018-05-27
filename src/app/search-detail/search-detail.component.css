@@ -1,0 +1,143 @@
+.details-container {
+	padding: 20px;
+	display: flex;
+	margin-bottom: 20px;
+}
+
+.details-container .detail-description-container {
+	padding-left: 20px;
+}
+
+.details-container .title {
+	font-family: bogle-bold;
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+.details-container .price {
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.details-container .item-id {
+	color: #aaa;
+}
+
+.details-container img {
+	border: 1px solid #ccc;
+	margin-bottom: 15px;
+	height: 180px;
+}
+
+
+.recommendations-container {
+	width: 100%;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-bottom: 10px;
+}
+
+.recommendations-container .recommendations-title {
+	font-family: bogle-bold;
+	font-size: 20px;
+	margin-bottom: 35px;
+}
+
+.recommendations-container section {
+	display: flex;
+	overflow-x: auto;
+	width: 100%;
+}
+
+.recommendations-item {
+	width: 210px;
+	text-align: center;
+	margin-bottom: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	cursor: pointer;
+}
+
+.recommendations-item .rec-name {
+	width: 180px;
+}
+
+.search-list-container {
+	padding: 20px;
+}
+
+.search-list-container ul li {
+	display: flex;
+	padding: 15px;
+}
+
+.search-list-container ul li .product-name {
+	margin-bottom: 5px;
+}
+
+.search-list-container ul li .price {
+	margin-bottom: 5px;
+}
+
+.search-list-container ul li:not(:last-child) {
+	border-bottom: 1px dotted #aaa;
+}
+
+.search-list-container ul li img {
+	height: 100px;
+	cursor: pointer;
+}
+
+.search-list-container ul li .product-description-container {
+	padding-left: 15px;
+}
+
+.search-list-container ul li .product-description-container a {
+	font-family: bogle-bold;
+	font-size: 18px;
+	margin-bottom: 10px;
+	color: #0071ce;
+}
+
+.empty-list-alert-container {
+	padding: 15px;
+	height: 100px;
+	background-color: #eee;
+	font-size: 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+	.recommendations-container section {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.details-container {
+		text-align: center;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin-bottom: 15px;
+	}
+
+	.details-container .description {
+		text-align: justify;
+	}
+
+	.search-list-container ul li {
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.search-list-container ul li img {
+		margin-bottom: 10px;
+	}
+
+	.search-list-container ul li .product-description-container {
+		text-align: center;
+		flex-basis: 100%;
+	}
+}

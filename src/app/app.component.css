@@ -1,0 +1,47 @@
+.app-page {
+	display: flex;
+	flex-direction: row;
+}
+
+.container {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+
+.page-header,
+.page-footer {
+	width: 100%;
+	height: auto;
+	padding: 0 15px;
+	background: #041e42;
+}
+
+.page-footer {
+	height: 35px;
+	color: #fff;
+	font-size: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.main {
+	min-height: calc(100vh - 115px);
+}
+
+@media screen and (min-width: 768px) {
+	.container {
+		width: 750px;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.container {
+		width: 970px;
+	}	
+}
+
+

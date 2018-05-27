@@ -1,0 +1,7 @@
+{
+  "/v1/*": {
+    "target": "http://api.walmartlabs.com",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

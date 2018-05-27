@@ -1,1 +1,92 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+	font-family: bogle-black;
+	src: url(assets/fonts/OTF/Bogle-Black.otf);
+}
+
+@font-face {
+	font-family: bogle-black-italic;
+	src: url(assets/fonts/OTF/Bogle-BlackItalic.otf);
+}
+
+@font-face {
+	font-family: bogle-bold;
+	src: url(assets/fonts/OTF/Bogle-Bold.otf);
+}
+
+@font-face {
+	font-family: bogle-bold-italic;
+	src: url(assets/fonts/OTF/Bogle-BoldItalic.otf);
+}
+
+@font-face {
+	font-family: bogle-regular;
+	src: url(assets/fonts/OTF/Bogle-Regular.otf);
+}
+
+@font-face {
+	font-family: bogle-regularItalic;
+	src: url(assets/fonts/OTF/Bogle-RegularItalic.otf);
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-size: 15px;
+	font-family: 'bogle-regular', 'arial', sans-serif;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.alert {
+	color: #de1c24;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.search-box-container {
+	padding: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.search-box-container .form-control {
+	height: 35px;
+	flex-basis: 85%;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-right: 0px;
+	border-style: solid;
+}
+
+.search-box-container .btn {
+	height: 35px;
+	flex-basis: 15%;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	background-color: #041e42;
+	border: 1px solid #041e42;
+	color: #fff;
+	padding-left: 10px;
+	padding-right: 10px;
+	cursor: pointer;
+}
+
+.landing-welcome-container .search-box-container {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.landing-welcome-container .form-control,
+.landing-welcome-container .btn {
+	height: 50px;
+}
+

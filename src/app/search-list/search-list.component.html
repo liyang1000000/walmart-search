@@ -1,0 +1,20 @@
+<div class="search-box-container">
+	<input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Please type in your keywords to start search" />
+	<button type="button" class="btn" (click)="getResults()">Search</button>
+</div>
+
+<div class="search-list-container">
+	<ul *ngIf="products && products.length > 0 && !noResults">
+		<li *ngFor='let product of products'>
+			<img src="{{product.thumbnailImage}}" routerLink="/search-detail/{{product.itemId}}"/>
+			<div class="product-description-container">
+				<div class="product-name"><a routerLink="/search-detail/{{product.itemId}}">{{product.name}}</a></div>
+				<div class="price">{{product.salePrice | currency}}</div>
+				<div class="short-description" [innerHtml]="product.shortDescription"></div>
+			</div>
+		</li>
+	</ul>
+	<div class="empty-list-alert-container" *ngIf="noResults">
+		Sorry. We couldn't find any items that match your search. Please type in another keyword to try again.
+	</div>
+</div>

@@ -1,0 +1,5 @@
+<div class="search-box-container">
+	<input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Please type in your keywords to start search" />
+	<button type="button" class="btn" (click)="startSearch()">Search</button>
+</div>
+<div *ngIf="showError && checkIfEmpty()" class="alert">Please type in keywords before clicking search button!</div>

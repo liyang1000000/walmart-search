@@ -1,0 +1,41 @@
+<app-search-box></app-search-box>
+
+<div class="details-container">
+	<img src="{{productDetails?.mediumImage}}">
+	<div class="detail-description-container">
+		<div class="title">{{productDetails?.name}}</div>
+		<div class="price">
+			<div>{{productDetails?.salePrice | currency}}</div>
+			<div class="item-id">Walmart #: {{productDetails?.itemId}}</div>
+		</div>
+		<div class="description" [innerHtml]="productDetails?.shortDescription"></div>
+	</div>
+</div>
+
+<div class="recommendations-container" *ngIf="recommendations && recommendations.length > 0">
+	<div class="recommendations-title">Here are the items that you may be interested in:</div>
+
+	<!-- I also create a version of scroll bar for the recommendation section, it will not show that much information. U can uncomment this part to have a look if interest-->
+	<!--<section>
+		<div class="recommendations-item" *ngFor="let recommendation of recommendations" (click)="navigateTo(recommendation.itemId)">
+			<img src="{{recommendation?.thumbnailImage}}"/>
+			<div>{{recommendation?.salePrice | currency}}</div>
+			<div class="rec-name">{{recommendation?.name}}</div>
+		</div>
+	</section>-->
+	<div class="search-list-container">
+		<ul *ngIf="recommendations && recommendations.length > 0">
+			<li *ngFor='let recommendation of recommendations'>
+				<img src="{{recommendation.thumbnailImage}}" (click)="navigateTo(recommendation.itemId)"/>
+				<div class="product-description-container">
+					<div class="product-name"><a (click)="navigateTo(recommendation.itemId)">{{recommendation.name}}</a></div>
+					<div class="price">{{recommendation.salePrice | currency}}</div>
+					<div class="short-description" [innerHtml]="recommendation.shortDescription"></div>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+</div>
+
+
