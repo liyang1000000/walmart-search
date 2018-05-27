@@ -1,8 +1,13 @@
 # Walmart Search
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
+Use Walmart Public API to implement search and recommendations
 
-## Development server
+## Usage
 
-Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Make sure you have node and npm installed on your local machine.
+
+1. git clone git@github.com:liyang1000000/walmart-search.git
+2. Run `npm install`
+3. Run `npm start` for a dev server. Open your browser, and navigate to `http://localhost:4200/`. You will see the app loaded.
+
 # walmart search
