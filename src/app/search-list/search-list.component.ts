@@ -19,7 +19,6 @@ export class SearchListComponent implements OnInit {
 
   constructor(private platformLocation: PlatformLocation, private http: HttpClient, private walmartSearchService: WalmartSearchService, private route: ActivatedRoute, private location: Location) {
     platformLocation.onPopState(() => {
-      this.searchText = this.route.snapshot.params['searchText']
       this.getResults()
     })
   }
@@ -49,11 +48,14 @@ export class SearchListComponent implements OnInit {
         I don't really get why we need to loop to call Lookup api again. 
         However I can only follow the requirement in the homework pdf to make the loop*/
 
-        Observable.forkJoin(items.splice(0, 5).map((item) => {
-          return this.walmartSearchService.getDetails(item.itemId)
-        })).subscribe((values) => {
-          this.products = values
-        })
+        
+        setTimeout(() => {
+          Observable.forkJoin(items.splice(0, 5).map((item) => {
+            return this.walmartSearchService.getDetails(item.itemId)
+          })).subscribe((values) => {
+            this.products = this.products.concat(values)
+          })
+        }, 1000)
 
         setTimeout(() => {
           Observable.forkJoin(items.splice(0, 5).map((item) => {
@@ -61,7 +63,7 @@ export class SearchListComponent implements OnInit {
           })).subscribe((values) => {
             this.products = this.products.concat(values)
           })
-        }, 1600)
+        }, 2000)
         
         
       })

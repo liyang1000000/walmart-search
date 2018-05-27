@@ -90,3 +90,11 @@ a {
 	height: 50px;
 }
 
+.spinner-container {
+	width: 100%;
+	text-align: center;
+}
+
+.spinner-container img {
+	height: 80px;
+}

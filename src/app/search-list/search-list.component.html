@@ -4,11 +4,14 @@
 </div>
 
 <div class="search-list-container">
+	<div class="spinner-container">
+		<img *ngIf="!noResults && (!products || products.length ==0)" src="/assets/images/spinner.gif"/>
+	</div>
 	<ul *ngIf="products && products.length > 0 && !noResults">
 		<li *ngFor='let product of products'>
-			<img src="{{product.thumbnailImage}}" routerLink="/search-detail/{{product.itemId}}"/>
+			<img src="{{product.thumbnailImage}}" routerLink="/search-recommendation/{{product.itemId}}"/>
 			<div class="product-description-container">
-				<div class="product-name"><a routerLink="/search-detail/{{product.itemId}}">{{product.name}}</a></div>
+				<div class="product-name"><a routerLink="/search-recommendation/{{product.itemId}}">{{product.name}}</a></div>
 				<div class="price">{{product.salePrice | currency}}</div>
 				<div class="short-description" [innerHtml]="product.shortDescription"></div>
 			</div>

@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component'
 import { SearchListComponent } from './search-list/search-list.component'
-import { SearchDetailComponent } from './search-detail/search-detail.component'
+import { SearchRecommendationComponent } from './search-recommendation/search-recommendation.component'
 import { WalmartSearchService } from './walmart-search.service';
 import { SearchLandingComponent } from './search-landing/search-landing.component';
 import { SearchBoxComponent } from './search-box/search-box.component'
@@ -22,8 +22,8 @@ export const routes: Routes = [
 		component: SearchListComponent
 	},
 	{
-		path: 'search-detail/:id',
-		component: SearchDetailComponent
+		path: 'search-recommendation/:id',
+		component: SearchRecommendationComponent
 	},
 	{
 		path: '',
@@ -38,7 +38,7 @@ export const routes: Routes = [
   declarations: [
     AppComponent,
     SearchListComponent,
-    SearchDetailComponent,
+    SearchRecommendationComponent,
     SearchLandingComponent,
     SearchBoxComponent
   ],
