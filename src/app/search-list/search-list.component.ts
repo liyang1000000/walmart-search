@@ -47,22 +47,20 @@ export class SearchListComponent implements OnInit {
         we have got all information that we need(name, salePrice, desc, thumbnail...) in search API, 
         I don't really get why we need to loop to call Lookup api again. 
         However I can only follow the requirement in the homework pdf to make the loop*/
-
-        
-        setTimeout(() => {
+        const getFiveResultsEachTime = () => {
           Observable.forkJoin(items.splice(0, 5).map((item) => {
             return this.walmartSearchService.getDetails(item.itemId)
           })).subscribe((values) => {
             this.products = this.products.concat(values)
           })
+        }
+        
+        setTimeout(() => {
+          getFiveResultsEachTime()
         }, 1000)
 
         setTimeout(() => {
-          Observable.forkJoin(items.splice(0, 5).map((item) => {
-            return this.walmartSearchService.getDetails(item.itemId)
-          })).subscribe((values) => {
-            this.products = this.products.concat(values)
-          })
+          getFiveResultsEachTime()
         }, 2000)
         
         

@@ -42,21 +42,22 @@ export class SearchRecommendationComponent implements OnInit {
   	this.walmartSearchService.getRecommendations(id).subscribe(response => {
       let items = response
       this.recommendations = []
-      setTimeout(() => {
-        Observable.forkJoin(items.splice(0, 5).map((item) => {
-          return this.walmartSearchService.getDetails(item.itemId)
-        })).subscribe((values) => {
-          this.recommendations = values
-        })
-      }, 1000)
-      
 
-      setTimeout(() => {
+      const getFiveResultsEachTime = () => {
         Observable.forkJoin(items.splice(0, 5).map((item) => {
           return this.walmartSearchService.getDetails(item.itemId)
         })).subscribe((values) => {
           this.recommendations = this.recommendations.concat(values)
         })
+      }
+
+      setTimeout(() => {
+        getFiveResultsEachTime()
+      }, 1000)
+      
+
+      setTimeout(() => {
+        getFiveResultsEachTime()
       }, 2000)
   	})
   }
